@@ -1,0 +1,125 @@
+﻿
+@{
+    Layout = null;
+    string url = Request.RawUrl;
+}
+
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="Error" content="Login" />
+
+    <title>CustomAuthorization</title>
+    <link rel="shortcut icon" href="~/Content/dist/img/favicon.png" type="image/x-icon">
+
+    @* CSS *@
+    @* Font Awesome Icons *@
+    <link rel="stylesheet" href="~/Content/plugins/fontawesome/css/all.css">
+    @* overlayScrollbars *@
+    <link rel="stylesheet" href="~/Content/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+    @* Theme style *@
+    <link rel="stylesheet" href="~/Content/dist/css/adminlte.css">
+    @* Google Fonts *@
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC:300,400,500,700,900&display=swap" rel="stylesheet">
+
+    @* DataTables *@
+    <link rel="stylesheet" href="~/Content/plugins/datatables-bs4/css/dataTables.bootstrap4.css">
+    @* Bootstrap 4 Datetime Picker *@
+    <link rel="stylesheet" href="~/Content/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css" />
+
+    @* Custom CSS *@
+    <link rel="stylesheet" href="~/Content/dist/css/style.css">
+    <link rel="stylesheet" href="~/Content/dist/css/media.css">
+    @*loader*@
+    <link rel="stylesheet" href="~/Content/css/loader.css">
+
+</head>
+
+
+<body class="hold-transition login-page">
+    <div class="login-box">
+        <div class="login-logo">
+            <a>
+                <img src="" style="width:80%;height:auto;position: relative;left:12%;">
+            </a>
+        </div>
+
+        @* /.login-logo *@
+        <div class="">
+            <div class="login-wrapper">
+                <p class="login-box-msg">登入系統</p>
+                @using (Ajax.BeginForm("Login", "Home", null, new AjaxOptions { HttpMethod = "POST", OnSuccess = "ReturnError", OnFailure = "Failure", OnBegin = "Loader" }, null))
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" maxlength="30" name="uid" placeholder="帳號">
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <input type="password" class="form-control" maxlength="30" name="pwd" placeholder="密碼">
+                    </div>
+                    <p style="color:red" class="col-md-12 col-xs-12" id="errorMsg">&nbsp;</p>
+
+                    <div class="row">
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-green btn-block">登入</button>
+                        </div>
+                    </div>
+                }
+
+            </div>
+            @* /.login-card-body *@
+        </div>
+    </div>
+    @* /.login-box *@
+    @* jQuery *@
+    @* REQUIRED SCRIPTS *@
+    @* jQuery *@
+    <script src="~/Content/plugins/jquery/jquery.min.js"></script>
+    @* Bootstrap *@
+    <script src="~/Content/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    @* overlayScrollbars *@
+    <script src="~/Content/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+    @* overlayScrollbars *@
+    <script src="~/Content/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+    @* AdminLTE App *@
+    <script src="~/Content/dist/js/adminlte.js"></script>
+    <script src="~/Content/scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script src="~/Content/scripts/jquery.blockUI.js"></script>
+    <script>
+        let url = '@url'.split('/').map(v => v.toLowerCase());
+        function ReturnError(msg) {
+            if (msg === true) {
+                window.location.href = `../Home/Index`;
+            } else {
+                $.unblockUI();
+                if (msg.length > 10) {
+                    $('#errorMsg').html('發生未知異常，請通知系統管理員');
+                    refresh();
+                } else {
+                    $('#errorMsg').html(msg);
+                }
+            }
+        }
+
+        function Failure(err) {
+            $.unblockUI();
+            alert('發生未知異常，請通知系統管理員');
+        }
+
+        function Loader() {
+            $.blockUI({
+                message: '<div class="loader"></div>',
+                css: { borderWidth: '0px', backgroundColor: 'transparent' },
+                baseZ: 2000
+            });
+        }
+    </script>
+
+</body>
+</html>
+

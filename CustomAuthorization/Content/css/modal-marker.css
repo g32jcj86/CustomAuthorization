@@ -1,0 +1,35 @@
+.svg-marker-wrapper{
+    position: relative;
+}
+
+.marker-red{
+    fill:#F6265A;
+}
+
+.marker-red:hover{
+    fill:#ab002b;
+}
+
+.marker-name{
+    fill:#000;
+    font-size: 2rem;
+}
+
+
+#marker-layer-wrapper{
+
+}
+
+#text-layer-wrapper{
+
+}
+
+#alert-modal .text-red{
+    color:#F6265A!important;
+}
+
+#alert-modal .alert-textarea{
+    resize:none;
+    overflow-y:scroll;
+    overflow-x:hidden;
+}

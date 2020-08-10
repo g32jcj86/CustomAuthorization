@@ -1,0 +1,43 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_ErrorLayout.cshtml";
+}
+
+
+
+@* Content Wrapper *@
+<div class="">
+
+    @* Content Header (Page header) *@
+    <div class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                @* Page Title  *@
+                <div class="col-sm-6">
+                    <h1 class="m-0 green"></h1>
+                </div>
+                @* /Page Title  *@
+            </div>
+            @* /row *@
+        </div>
+        @* /container-fluid *@
+    </div>
+    @* /content-header *@
+    @* Main content *@
+    <section class="content">
+        <div class="container-fluid">
+            <div class="col-12 text-center" style="margin-top: 10%;">
+                <h2 class="bold">
+                    <i class="fas fa-exclamation-triangle red" style="font-size:10rem; "></i><br><br>
+                    @* 訊息 *@
+                    <span>權限不足</span>
+                    @* /訊息 *@
+                </h2>
+                <a href="@Url.Action("Login","Home",new { area=""})" class="btn btn-red">返回</a>
+            </div>
+        </div>
+        @*/container-fluid *@
+    </section>
+    @* /content *@
+</div>
+@* /content-wrapper *@

@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html lang="en" style="background-color:#f8f9fa;">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="Error" content="@ViewBag.ErrorPage">
+
+    <link rel="shortcut icon" href="~/Content/dist/img/favicon.png" type="image/x-icon" />
+
+    <title>新竹教育網路中心環控系統</title>
+
+    @* CSS *@
+    @* Font Awesome Icons *@
+    <link rel="stylesheet" href="~/Content/plugins/fontawesome/css/all.css">
+    @* overlayScrollbars *@
+    <link rel="stylesheet" href="~/Content/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+    @* Theme style *@
+    <link rel="stylesheet" href="~/Content/dist/css/adminlte.css">
+    @* Google Fonts *@
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC:300,400,500,700,900&display=swap" rel="stylesheet">
+
+    @* Custom CSS *@
+    <link rel="stylesheet" href="~/Content/dist/css/style.css">
+    <link rel="stylesheet" href="~/Content/dist/css/media.css">
+
+    @RenderSection("style", required: false)
+</head>
+<body style="background-color:#f8f9fa;">
+
+    @* wrapper *@
+    <div class="">
+
+        @* Content Wrapper *@
+        <div class="">
+
+            @RenderBody()
+
+            @* /content-wrapper *@
+
+        </div>
+
+        @* /wrapper *@
+
+        @*=============================== Modal star ===============================*@
+
+        @RenderSection("modal", required: false)
+
+        @*=============================== Modal end ===============================*@
+
+        @* REQUIRED SCRIPTS *@
+        @* jQuery *@
+        <script src="~/Content/plugins/jquery/jquery.min.js"></script>
+        @* Bootstrap *@
+        <script src="~/Content/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+        @* overlayScrollbars *@
+        <script src="~/Content/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+        @* overlayScrollbars *@
+        <script src="~/Content/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+        @* AdminLTE App *@
+        <script src="~/Content/dist/js/adminlte.js"></script>
+
+        @RenderSection("scripts", required: false)
+    </div>
+</body>
+</html>

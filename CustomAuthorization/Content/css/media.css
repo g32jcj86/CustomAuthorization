@@ -1,0 +1,116 @@
+/* 4K 3840 */
+@media only screen and (min-width: 3840px){
+
+}
+
+
+
+
+/* For Tablet & Mobile Lastupdate:2020-02-20*/
+/* iPad Pro (12.9") Portrait*/ 
+@media only screen 
+    and (min-width: 1024px)
+    and (max-width: 1024px) 
+    and (orientation: portrait) 
+    and (-webkit-min-device-pixel-ratio: 2){
+
+
+}
+
+/* iPad Pro (12.9") Landscape */ 
+@media only screen 
+    and (min-width: 1366px)
+    and (max-width: 1366px) 
+    and (orientation: landscape) 
+    and (-webkit-min-device-pixel-ratio: 2){
+
+
+
+}
+
+
+
+
+
+/* iPad pro 10.5 Portrait */
+@media only screen 
+    and (min-device-width: 834px) 
+    and (max-device-width: 834px) 
+    and (orientation: portrait) 
+    and (-webkit-min-device-pixel-ratio: 2) {
+
+
+}
+
+/* iPad pro 10.5 Landscape */
+@media only screen 
+    and (min-width: 1112px)
+    and (max-width: 1112px) 
+    and (orientation: landscape) 
+    and (-webkit-min-device-pixel-ratio: 2){
+
+
+
+}
+
+
+
+
+
+/* iPad 2019 Portrait */ 
+@media only screen 
+    and (min-width: 810px)
+    and (max-width: 810px) 
+    and (orientation: portrait) 
+    and (-webkit-min-device-pixel-ratio: 2){
+
+
+
+}
+
+
+/* iPad 2019 Landscape */
+@media only screen 
+    and (min-width: 1080px)
+    and (max-width: 1080px) 
+    and (orientation: landscape) 
+    and (-webkit-min-device-pixel-ratio: 2){
+
+
+
+}
+
+
+
+
+
+/* Apple iPad Mini,Apple iPad Air 2 9.7 Portrait */
+@media only screen 
+    and (min-width: 768px)
+    and (max-width: 768px) 
+    and (orientation: portrait) 
+    and (-webkit-min-device-pixel-ratio: 2){
+
+
+}
+
+
+/* Apple iPad Mini, Apple iPad Air 2 9.7 Landscape */ 
+@media only screen 
+    and (min-width: 1024px)
+    and (max-width: 1024px) 
+    and (orientation: landscape) 
+    and (-webkit-min-device-pixel-ratio: 2){
+
+
+}
+
+
+
+
+
+
+@media only screen and (max-width:480px){
+
+
+}
